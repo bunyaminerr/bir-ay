@@ -94,20 +94,89 @@ button {
   border-radius: 8px;
 }
 
-/* Telefonlar için (dikey ekran) yatay ve dikey fotoğraf dinamik iyileştirmesi */
+.gallery-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  justify-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.nav-prev {
+  grid-column: 1;
+}
+
+.media-container {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+}
+
+.nav-next {
+  grid-column: 3;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  color: rgba(250, 246, 240, 0.7);
+  cursor: pointer;
+  padding: 20px; /* Butonlara tıklamayı kolaylaştırmak için alanı büyüttüm */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Telefonlar için (dikey ekran) dinamik iyileştirme */
 @media (max-width: 768px) {
+  .gallery-wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    padding: 0 10px;
+  }
+  .media-container {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+  .nav-prev {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: end;
+    margin-right: 15px;
+    background: rgba(255,255,255,0.05); /* Mobilde butonlar daha belirgin olsun */
+    border-radius: 50%;
+  }
+  .nav-next {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: start;
+    margin-left: 15px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+  
   .media-frame {
-    height: auto !important; /* Sabit yüksekliği kaldır ki yatay fotoğraflarda büzülsün, dikeylerde uzasın */
-    min-height: 40vh;
+    height: auto !important;
+    min-height: 30vh;
     border-radius: 12px;
+    width: 100% !important; /* Ekranı tam kaplaması için */
   }
   .media-content {
-    position: relative !important; /* Fotoğrafın boyutunun çerçevenin boyutunu belirlemesi için */
+    position: relative !important;
     height: auto !important;
+    padding: 0;
   }
   .media-element {
     height: auto !important;
-    max-height: 75vh; /* Dikey fotoğraflar için eski büyük sınır korunuyor */
+    max-height: 70vh;
     width: 100%;
     object-fit: contain;
   }

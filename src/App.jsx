@@ -210,17 +210,17 @@ export default function App() {
               transition={{ duration: 1 }}
               style={styles.galleryContainer}
             >
-              <div style={styles.galleryWrapper}>
+              <div className="gallery-wrapper">
                 <motion.button 
                   onClick={handlePrev} 
-                  style={styles.navButton}
-                  whileHover={{ scale: 1.1, color: '#fff' }}
+                  className="nav-prev nav-button"
+                  whileHover={{ scale: 1.1, color: '#fff', backgroundColor: 'rgba(255,255,255,0.15)' }}
                   whileTap={{ scale: 0.9 }}
                 >
                   <ChevronLeft size={40} />
                 </motion.button>
                 
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '25px', width: '100%' }}>
+                <div className="media-container">
                   <motion.div className="media-frame" layout transition={{ duration: 0.5 }}>
                     <AnimatePresence mode="wait">
                       <motion.div
@@ -273,14 +273,14 @@ export default function App() {
                 {galleryIndex < mediaItems.length - 1 ? (
                   <motion.button 
                     onClick={handleNext} 
-                    style={styles.navButton}
-                    whileHover={{ scale: 1.1, color: '#fff' }}
+                    className="nav-next nav-button"
+                    whileHover={{ scale: 1.1, color: '#fff', backgroundColor: 'rgba(255,255,255,0.15)' }}
                     whileTap={{ scale: 0.9 }}
                   >
                     <ChevronRight size={40} />
                   </motion.button>
                 ) : (
-                  <div style={{ width: '60px' }}></div>
+                  <div className="nav-next" style={{ width: '60px' }}></div>
                 )}
               </div>
             </motion.div>
