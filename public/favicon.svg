@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Romantik kalp arka planı -->
+  <path d="M50 85 C50 85 10 55 10 30 C10 15 25 5 40 15 C50 22 50 22 50 22 C50 22 50 22 60 15 C75 5 90 15 90 30 C90 55 50 85 50 85 Z" fill="#C68B9B" />
+  <!-- H & A harfleri -->
+  <text x="50" y="42" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-style="italic" fill="#FAF6F0" text-anchor="middle" dominant-baseline="middle">
+    H &amp; A
+  </text>
+</svg>
