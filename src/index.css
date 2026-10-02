@@ -164,20 +164,8 @@ button {
   }
   
   .media-frame {
-    height: auto !important;
-    min-height: 30vh;
+    height: 65vh !important; /* Sabit yükseklik: Butonlar zıplamaz ve animasyon bozulmaz */
     border-radius: 12px;
-    width: 100% !important; /* Ekranı tam kaplaması için */
-  }
-  .media-content {
-    position: relative !important;
-    height: auto !important;
-    padding: 0;
-  }
-  .media-element {
-    height: auto !important;
-    max-height: 70vh;
-    width: 100%;
-    object-fit: contain;
+    width: 100% !important; /* Ekranı tam kaplar, yatay fotoğraflar devasa olur */
   }
 }

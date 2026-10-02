@@ -221,7 +221,7 @@ export default function App() {
                 </motion.button>
                 
                 <div className="media-container">
-                  <motion.div className="media-frame" layout transition={{ duration: 0.5 }}>
+                  <div className="media-frame">
                     <AnimatePresence mode="wait">
                       <motion.div
                         key={galleryIndex}
