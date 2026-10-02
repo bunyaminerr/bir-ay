@@ -221,7 +221,7 @@ export default function App() {
                 </motion.button>
                 
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '25px', width: '100%' }}>
-                  <div className="media-frame">
+                  <motion.div className="media-frame" layout transition={{ duration: 0.5 }}>
                     <AnimatePresence mode="wait">
                       <motion.div
                         key={galleryIndex}
@@ -250,7 +250,7 @@ export default function App() {
                       </motion.div>
                     </AnimatePresence>
                     <div style={styles.counter}>{galleryIndex + 1} / {mediaItems.length}</div>
-                  </div>
+                  </motion.div>
 
                   <AnimatePresence>
                     {galleryIndex === mediaItems.length - 1 && (

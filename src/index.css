@@ -94,10 +94,21 @@ button {
   border-radius: 8px;
 }
 
-/* Telefonlar için (dikey ekran) yatay fotoğraf iyileştirmesi */
+/* Telefonlar için (dikey ekran) yatay ve dikey fotoğraf dinamik iyileştirmesi */
 @media (max-width: 768px) {
   .media-frame {
-    height: 45vh;
+    height: auto !important; /* Sabit yüksekliği kaldır ki yatay fotoğraflarda büzülsün, dikeylerde uzasın */
+    min-height: 40vh;
     border-radius: 12px;
+  }
+  .media-content {
+    position: relative !important; /* Fotoğrafın boyutunun çerçevenin boyutunu belirlemesi için */
+    height: auto !important;
+  }
+  .media-element {
+    height: auto !important;
+    max-height: 75vh; /* Dikey fotoğraflar için eski büyük sınır korunuyor */
+    width: 100%;
+    object-fit: contain;
   }
 }
