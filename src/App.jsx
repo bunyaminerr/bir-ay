@@ -221,7 +221,7 @@ export default function App() {
                 </motion.button>
                 
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '25px', width: '100%' }}>
-                  <div style={styles.mediaFrame}>
+                  <div className="media-frame">
                     <AnimatePresence mode="wait">
                       <motion.div
                         key={galleryIndex}
@@ -229,7 +229,7 @@ export default function App() {
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 1.05 }}
                         transition={{ duration: 0.8, ease: "easeInOut" }}
-                        style={styles.mediaContent}
+                        className="media-content"
                       >
                         {mediaItems[galleryIndex].type === 'video' ? (
                           <video 
@@ -238,13 +238,13 @@ export default function App() {
                             playsInline 
                             muted 
                             autoPlay
-                            style={styles.media}
+                            className="media-element"
                           />
                         ) : (
                           <img 
                             src={mediaItems[galleryIndex].src} 
                             alt="Anı" 
-                            style={styles.media}
+                            className="media-element"
                           />
                         )}
                       </motion.div>
